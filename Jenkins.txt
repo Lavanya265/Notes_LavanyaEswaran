@@ -1,0 +1,78 @@
+JENKINS:
+
+* Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle.* 
+* Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat. It supports SCM tools including AccuRev, CVS, Subversion, Git, Mercurial, Perforce, Clearcase and RTC, and can execute Apache Ant and Apache Maven based projects as well as arbitrary shell scripts and Windows batch commands.
+* Jenkins is (and still is) a continuous integration (CI) system that allows automation of software development process, such as building code on SCM commit triggers. However the growing need for continuous delivery (CD) has requested that Jenkins evolves for a pure CI system to a mix of CI and CD. Also, the need to undustrialize Jenkins jobs has been growing and classic Jenkins 1.x Freestyle/Maven jobs started to be too limited for certain needs.
+
+Configure a project in Jenkins:
+
+Here we will be checking out the latest copy of our project's code, run the tests and will make the
+application live.To achieve that, follow below steps:
+1. Open Jenkins in browser.
+2. Click the New Job link.
+3. Enter project name and select the Build a free-style software project link.
+4. Click on Ok button.
+5. Under the Source code management section, select the radio box next to your source
+code management tool. In my case I have selected Git.
+
+Provide url of git repo like git://github.com/example/example.git
+
+6. Under the Build triggers, select the radio box next to Poll SCM.
+7. Provide ***** in Schedule box. This box is responsible to trigger the build at regular
+intervals. ***** specifies that, the job will get trigger every minute for changes in git repo.
+8. Under the Build section, click the Add Build Step button and then select the option by
+which you want to build the project. I have selected Execute Shell. In the command box
+write the command to build,run the tests, and deploy it to prod.
+9. Scroll down and Save.
+So above we have configured a basic project in Jenkins which will trigger the build at every minute
+for change in your git repository. Note: To setup the complex project, you may have to install some
+plugins in Jenkins.
+
+
+	Jenkins :
+	
+Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle.
+In a nutshell, Jenkins is the leading open source automation server. Built with Java, it provides hundreds of plugins to support building, testing, deploying and automation for virtually any project.
+Features :
+ Jenkins offers the following major features out of the box, and many more can be added through plugins:
+Easy installation: Just run java -jar jenkins.war, deploy it in a servlet container. No additional
+install, no database. Prefer an installer or native package? We have those as well. Easy
+configuration: Jenkins can be configured entirely from its friendly web GUI with extensive on-thefly error checks and inline help. Rich plugin ecosystem: Jenkins integrates with virtually every
+SCM or build tool that exists. View plugins. Extensibility: Most parts of Jenkins can be extended
+and modified, and it's easy to create new Jenkins plugins. This allows you to customize Jenkins to
+your needs. Distributed builds: Jenkins can distribute build/test loads to multiple computers with
+different operating systems. Building software for OS X, Linux, and Windows? No problem.
+
+Installation :
+
+	$ wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+	$ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ >
+	/etc/apt/sources.list.d/jenkins.list'
+	$ sudo apt-get update
+	$ sudo apt-get install jenkins
+	to do more refer link :
+
+
+Jenkins Build Jobs :
+
+Creating a new build job in Jenkins is simple: just click on the “New Job” menu item on the Jenkins
+dashboard. Jenkins supports several different types of build jobs, which are presented to you
+when you choose to create a new job
+
+Freestyle software project
+
+Freestyle build jobs are general-purpose build jobs, which provides a maximum of flexibility.
+Maven project The “maven2/3 project” is a build job specially adapted to Maven projects. Jenkins
+understands Maven pom files and project structures, and can use the information gleaned from
+the pom file to reduce the work you need to do to set up your project.
+
+
+
+
+
+
+
+
+
+
+

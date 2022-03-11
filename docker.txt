@@ -1,0 +1,83 @@
+DOCKER COMMANDS:
+
+	* docker images
+	* docker run busybox:1.24 echo "hello world!!"
+	* docker run busybox:1.24 echo "Hey there"
+	* docker images(recheck)
+	* docker run busybox:1.24 ls /
+	* docker run -i -t busybox:1.24
+		the -i flag starts an interactive container
+		the -t flag creates a pseudo-TTY that attach stdin and stdout
+		
+		1) ls
+		2) touch a.txt(create a text file named a)
+		3) ls (recheck)
+		4) exit
+		
+	SLEEP Commands:
+	
+	*  docker run -d busybox:1.24 sleep 1000(82a82af577aeb884048a16818e44c0897a310eea7ed43e6cd121fe4bef79aee4 - long id)
+	* docker ps
+	* docker ps -a(all commands)
+	* docker run --rm busybox:1.24 sleep 1
+	* docker run --name hello_world busybox:1.24
+	* docker inspect (id) - shows low level information about the images or containers
+	
+	Docker Image Layers:
+	
+	* docker history busybox:1.24
+ 	Building images:
+ 	
+ 	* docker run -it debian:jessie
+ 	opened command propmt.....
+		1) ls
+ 		2) git (not found)
+ 		3) to install it - apt-get update && apt-get install -y git
+ 		4) clear
+ 		5)exit
+ 	
+ 	Docker commit:
+ 	
+		• Docker commit command would save the changes we made to the Docker container’s file system to a new image.
+
+	docker commit	 container_ID repository_name:tag
+	
+	* docker ps -a
+	* docker commit 221bfa54232e vbox/debian:1.00 (new image)
+	* docker images
+	
+	Dockerfile and	Instructions: 
+	
+		• A	Dockerfile is	a	text	document	that	contains	all	the	
+		instructions	users	provide	to	assemble	an	image.
+		• Each	instruction	will	create	a	new	image	layer	to	the	image.
+		• Instructions	specify	what	to	do	when	building	the	image.
+	
+	Docker Compose	Commands
+		
+		• docker compose	up	starts	up	all	the	containers.	
+		• docker compose	ps checks	the	status	of	the	containers	managed	by	docker compose.	
+		• docker compose	logs outputs	colored	and	aggregated	logs	for	the	compose-managed	containers.	
+		• docker compose	logs with	dash	f	option	outputs	appended	log	when	the	log	grows.	
+		• docker compose	logs with	the	container	name	in	the end	outputs	the	logs	of a specific container.	
+		• docker compose	stop stops	all	the	running	containers	without	removing	them.	
+		• docker compose	rm removes	all	the	containers.	
+		• docker compose	build rebuilds	all	the	images.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
